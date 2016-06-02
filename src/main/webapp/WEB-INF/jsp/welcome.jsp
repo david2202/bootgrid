@@ -32,11 +32,13 @@
         <tbody>
         </tbody>
     </table>
-
+    <button id="search" type="button" class="btn btn-default">Search</button>
     <script>
-        $.ajax({url: "data", success: function(result){
-                $("#grid-basic").bootgrid("append", result);
-            }});
+        $("#search").click(function() {
+            $.ajax({url: "data", success: function(result){
+                    $("#grid-basic").bootgrid("clear").bootgrid("append", result);
+                }});
+        });
     </script>
 </body>
 
